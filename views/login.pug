@@ -1,0 +1,17 @@
+extends layout
+block content
+    h1= title
+
+    div.lead Please Log in
+    p
+    form(method="post" action="")
+        div.form-group    
+            label(for='username') Username
+            input#username.form-control(name="username",type="text")
+            
+            label(for='password') password
+            input#password.form-control(name="password",type="password",placeholder="password")
+        p
+        a.btn.btn-link(href='/') Cancel
+        button.btn.btn-primary(type='submit',value="Log in")  Log in
+    

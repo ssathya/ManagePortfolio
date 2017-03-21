@@ -2,4 +2,25 @@ extends layout
 
 block content
   h1= title
-  p Account Create Form #{title}
+  div.lead Account Create Form 
+  div.small All fields required
+  p
+  form(method="post" action="")
+    div.form-group
+      label(for='name') Your Name:
+      input#name.form-control(type='text' placeholder="Name" name='name' required)
+      label(for='email') Email:
+      input#email.form-control(type='email' placeholder='id@example.com' name='email' required)
+      label(for='username') User Name:
+      input#username.form-control(type='text' placeholder='user id' name='username' required)
+      label(for='password') Password:
+      input#password.form-control(type='password' placeholder='password' name='password' required)
+      label(for='password1') Confirm Password:
+      input#password.form-control(type='password' placeholder='password1' name='password1' required)
+    button.btn.btn-primary(type='submit') Submit
+  
+  if errors
+    div.danger
+      ul
+        for error in errors
+          li!=error.msg

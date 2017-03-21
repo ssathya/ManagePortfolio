@@ -10,6 +10,7 @@ var users = require('./routes/users');
 var upload = require('./routes/upload');
 var auth=require('./routes/auth');
 var app = express();
+var expressValidator = require('express-validator');
 
 //added for authentication
 var session = require('express-session');
@@ -33,6 +34,7 @@ app.set('view engine', 'pug');
 app.use(logger('dev'));
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
+app.use(expressValidator());
 app.use(cookieParser());
 app.use(session({
   secret: 'will be replaced by env variable',
