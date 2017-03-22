@@ -2,7 +2,14 @@ extends layout
 
 block content
   h1= title
-  p Welcome to #{title}
+  p Holdings Maintenance
   form(method="post", enctype='multipart/form-data')
+    p
     input(type="file", name="ssupload")
+    p
     input(type='submit', name='ssupload', value='Upload spread Sheet')
+  p
+  p
+  p Select your position file from your filesystem. Accepted file format Microsoft Excel s/spread
+  p List your equitie tickers &amp; ETFS in tab Equities column A
+  p List your Mutual funds tickers in tab Funds column A

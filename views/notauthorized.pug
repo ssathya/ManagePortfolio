@@ -1,0 +1,9 @@
+extends layout
+block content
+    h1= title
+    p Sorry you are #{title} to view the page requested
+
+    p
+    a.button.btn.btn-primary(href='/') Home
+    | &nbsp;&nbsp;&nbsp;
+    a.button.btn.btn-primary(href='/auth/login') Login

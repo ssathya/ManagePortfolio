@@ -2,7 +2,7 @@ var passport = require('passport');
 var passportJwt = require('passport-jwt');
 var LocalStrategy = require('passport-local').Strategy;
 var Account = require('../models/account');
-var uiUtils = require('./utils');
+var uiUtils = require('../utils/utils');
 exports.accountRegisterGet = function (req, res, next) {
     res.render('accountCreateForm', { title: 'New Registration' });
 }

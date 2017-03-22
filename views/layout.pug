@@ -32,9 +32,12 @@ html(lang='en')
                                 a(href='/uploads') Upload Holdings
                             else
                                 a(href='/auth/register') Register
+                        li
+                            if(user)
+                                a(href='/uploads/firmMaintain') Firms Maintain
         block content
         block footer
             div.footer
-                |Copyright &copy; Sridhar Sathya 2017-
+                &copy; Sridhar Sathya 2017-
                 script.
                     document.write(new Date().getFullYear())

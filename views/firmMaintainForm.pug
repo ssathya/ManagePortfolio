@@ -1,0 +1,14 @@
+extends layout
+
+block content
+    h1= title
+    p Firm Names Maintain
+    form(method="post", enctype='multipart/form-data' action="")
+        p
+        input(type="file", name="NASDAQFile")
+        p
+        input(type='submit', name='NASDAQFile', value='Upload file')
+    p
+    p
+    p Select your position file from your filesystem. Accepted file format downloads from 
+        a(href='http://www.nasdaq.com/screening/company-list.aspx') here
