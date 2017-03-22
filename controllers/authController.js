@@ -47,12 +47,20 @@ exports.accountRegisterPost = function (req, res, next) {
 
 exports.authLoginGet = function (req, res, next) {
     res.render('login', { title: 'Please log in' });
-}
+};
 
 exports.authLoginPost = function (req, res, next) {
     passport.authenticate('local', function (err, user, info) {
         if (err) { return next(err); }
         if (!user) { return res.redirect('/auth/login'); }
-        res.redirect('/');
+        req.logIn(user, function (err) {
+            if (err) { return next(err); }
+            return res.redirect('/');
+        });
     })(req, res, next);
+};
+
+exports.logOutAll = function (req, res, next) {
+    req.logout();
+    res.redirect('/');
 }
