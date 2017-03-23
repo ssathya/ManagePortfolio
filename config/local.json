@@ -1,6 +1,0 @@
-{
-    "AppVar": {
-        "dbConnectionStr": "mongodb://loadit:pass123@ds058579.mlab.com:58579/trygetdb",        
-        "appPort": "3000"
-    }
-}
