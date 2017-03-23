@@ -6,7 +6,7 @@ var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
 var session = require('express-session');
 var expressValidator = require('express-validator');
-var mongooose = require('mongoose')
+var mongoose = require('mongoose')
 var passport = require('passport');
 var LocalStrategy = require('passport-local').Strategy;
 var config = require('config');
@@ -48,7 +48,7 @@ passport.deserializeUser(Account.deserializeUser());
 
 //connect to mongoose
 if (config.has('AppVar.dbConnectionStr')) {
-    mongooose.connect(config.get('AppVar.dbConnectionStr'),
+    mongoose.connect(config.get('AppVar.dbConnectionStr'),
         function (err) {
             if (err) {
                 console.log('Could not connet to mongodb');
@@ -60,6 +60,9 @@ if (config.has('AppVar.dbConnectionStr')) {
     console.log('No connection string provided exiting...');
     process.exit(1);
 }
+
+mongoose.Promise = require('bluebird');
+
 
 
 app.use('/', index);
